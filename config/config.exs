@@ -27,3 +27,27 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+config :ueberauth, Ueberauth,
+  providers: [
+    identity: {Ueberauth.Strategy.Identity, []}
+  ]
+
+config :guardian, Guardian,
+  issuer: "Earth.#{Mix.env}",
+  ttl: {30, :days},
+  verify_issuer: true,
+  serializer: Earth.GuardianSerializer,
+  secret_key: to_string(Mix.env),
+  hooks: GuardianDb,
+  permissions: %{
+    default: [
+      :read_profile,
+      :write_profile,
+      :read_token,
+      :revoke_token,
+    ],
+  }
+
+config :guardian_db, GuardianDb,
+  repo: PhoenixGuardian.Repo
