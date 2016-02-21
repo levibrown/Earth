@@ -37,6 +37,7 @@ defmodule Earth.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 1.6"},
      {:guardian, "~> 0.9.0"},
      {:guardian_db, "0.4.0"},
      {:ueberauth, "~> 0.2"},
