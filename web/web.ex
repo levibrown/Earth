@@ -56,6 +56,7 @@ defmodule Earth.Web do
       import Earth.Router.Helpers
       import Earth.ErrorHelpers
       import Earth.Gettext
+      import Earth.ViewHelpers
     end
   end
 
