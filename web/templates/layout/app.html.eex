@@ -18,10 +18,6 @@
               <ul class="nav nav-pills pull-right btn-group-xs">
                   <%= render "login_bar.html", current_user: @current_user, conn: @conn %>
               </ul>
-              <!-- <ul class="nav nav-pills pull-right"> -->
-              <!-- <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li> -->
-              <!-- </ul> -->
-              <!-- </nav> -->
               <span class="logo"></span>
       </header>
 
@@ -39,6 +35,7 @@
       </main>
 
     </div> <!-- /container -->
+
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
