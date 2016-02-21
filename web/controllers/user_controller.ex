@@ -6,6 +6,12 @@ defmodule Earth.UserController do
   alias Earth.Authorization
 
   def new(conn, params, current_user, _claims) do
-    render conn, "new.html", current_user: current_user
+    if current_user do
+      conn
+      |> put_flash(:info, "You must sign out to create a new user.")
+      |> redirect(to: page_path(conn, :index))
+    else
+      render conn, "new.html", current_user: current_user
+    end
   end
 end
