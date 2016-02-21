@@ -29,10 +29,14 @@ defmodule Earth.Web do
   def controller do
     quote do
       use Phoenix.Controller
+      use Guardian.Phoenix.Controller
 
       alias Earth.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
+
+      alias Guardian.Plug.EnsureAuthenticated
+      alias Guardian.Plug.EnsurePermissions
 
       import Earth.Router.Helpers
       import Earth.Gettext
