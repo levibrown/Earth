@@ -40,6 +40,7 @@ defmodule Earth.Web do
 
       import Earth.Router.Helpers
       import Earth.Gettext
+      import Earth.Controller.Helpers
     end
   end
 
