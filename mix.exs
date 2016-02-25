@@ -19,7 +19,8 @@ defmodule Earth.Mixfile do
   def application do
     [mod: {Earth, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :ueberauth, :ueberauth_identity]]
+                    :phoenix_ecto, :postgrex, :ueberauth, :ueberauth_identity,
+                    :ueberauth_facebook, :ueberauth_github]]
   end
 
   # Specifies which paths to compile per environment.
@@ -41,7 +42,9 @@ defmodule Earth.Mixfile do
      {:guardian, "~> 0.9.0"},
      {:guardian_db, "0.4.0"},
      {:ueberauth, "~> 0.2"},
-     {:ueberauth_identity, "~> 0.2"}]
+     {:ueberauth_identity, "~> 0.2"},
+     {:ueberauth_facebook, "~> 0.3"},
+     {:ueberauth_github, "~> 0.2"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

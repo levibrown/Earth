@@ -24,6 +24,14 @@
           </a>
         </p>
       <% end %>
+      <%= if not Enum.member?(@current_auths, "facebook") do %>
+        <p>
+          <a class="btn btn-primary col-xs-12" href="<%= auth_path(@conn, :login, "facebook") %>">
+            <i class='fa fa-facebook'></i>
+            Facebook
+          </a>
+        </p>
+      <% end %>
       <%= if not Enum.member?(@current_auths, "identity") do %>
         <hr>
         <%= form_tag auth_path(@conn, :callback, "identity"), method: "post", class: "login", novalidate: true do %>

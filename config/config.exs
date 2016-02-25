@@ -30,7 +30,9 @@ config :phoenix, :generators,
 
 config :ueberauth, Ueberauth,
   providers: [
-    identity: {Ueberauth.Strategy.Identity, [callback_methods: ["POST"]]}
+    identity: {Ueberauth.Strategy.Identity, [callback_methods: ["POST"]]},
+    github: {Ueberauth.Strategy.Github, [uid_field: "login", default_scope: "user,public_repo"]},
+    facebook: {Ueberauth.Strategy.Facebook, []}
   ]
 
 config :guardian, Guardian,
@@ -51,3 +53,11 @@ config :guardian, Guardian,
 
 config :guardian_db, GuardianDb,
   repo: Earth.Repo
+
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+  client_id: System.get_env("GITHUB_CLIENT_ID"),
+  client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+
+config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
+  client_id: System.get_env("FACEBOOK_CLIENT_ID"),
+  client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")
