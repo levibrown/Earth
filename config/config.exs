@@ -32,7 +32,7 @@ config :ueberauth, Ueberauth,
   providers: [
     identity: {Ueberauth.Strategy.Identity, [callback_methods: ["POST"]]},
     github: {Ueberauth.Strategy.Github, [uid_field: "login", default_scope: "user,public_repo"]},
-    facebook: {Ueberauth.Strategy.Facebook, []}
+    facebook: {Ueberauth.Strategy.Facebook, [profile_fields: "id,email,gender,link,locale,name,timezone,updated_time"]}
   ]
 
 config :guardian, Guardian,

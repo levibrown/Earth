@@ -36,7 +36,7 @@ config :phoenix, :stacktrace_depth, 20
 config :earth, Earth.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "levibrown",
-  password: "levi0879",
+  password: "",
   database: "earth_dev",
   hostname: "localhost",
   pool_size: 10

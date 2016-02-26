@@ -28,7 +28,7 @@
   "postgrex": {:hex, :postgrex, "0.11.1"},
   "ranch": {:hex, :ranch, "1.2.1"},
   "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"},
-  "ueberauth": {:git, "https://github.com/ueberauth/ueberauth.git", "9021cbd98de4e00394b85df2f89d6d2b8ea21955", []},
+  "ueberauth": {:hex, :ueberauth, "0.2.0"},
   "ueberauth_facebook": {:hex, :ueberauth_facebook, "0.3.2"},
   "ueberauth_github": {:hex, :ueberauth_github, "0.2.0"},
   "ueberauth_identity": {:hex, :ueberauth_identity, "0.2.2"},
